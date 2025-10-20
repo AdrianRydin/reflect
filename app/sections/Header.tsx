@@ -37,7 +37,13 @@ function Header() {
           className="text-white hover:text-neutral-400 transition-colors"
           onClick={() => setIsOpen(false)}
         >
-          <Image src="/ReflectLogo.PNG" width={200} height={50} alt="Logo" />
+          <Image
+            src="/reflect-logo.png"
+            width={200}
+            height={50}
+            alt="Logo"
+            priority
+          />
         </Link>
 
         {/* Desktop */}
