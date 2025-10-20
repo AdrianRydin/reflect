@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/Button";
 
 export function Contact() {

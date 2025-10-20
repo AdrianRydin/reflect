@@ -4,7 +4,8 @@ import { Card } from "@/components/Card";
 import { Badge } from "@/components/Badge";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/Button";
-import { ImageWithFallback } from "../figma/ImageWithFallbacks";
+
+import Image from "next/image";
 
 export function Projects() {
   const projects = [
@@ -55,10 +56,11 @@ export function Projects() {
               className="overflow-hidden group hover:shadow-xl hover:shadow-neutral-900/50 transition-shadow bg-neutral-900 border-neutral-800"
             >
               <div className="relative h-48 overflow-hidden bg-neutral-800">
-                <ImageWithFallback
+                <Image
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   src={project.image}
                   alt={project.title}
+                  fill
                 />
               </div>
 

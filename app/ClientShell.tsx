@@ -3,6 +3,7 @@
 
 import Header from "@/app/sections/Header";
 import HashScroll from "./HashScroll";
+import { Suspense } from "react";
 
 export default function ClientShell({
   children,
@@ -12,8 +13,10 @@ export default function ClientShell({
   return (
     <>
       <Header />
-      <HashScroll />{" "}
-      {/* ser till att hash-länkar scrollar smooth, även efter route-byten */}
+      <Suspense fallback={null}>
+        <HashScroll />{" "}
+      </Suspense>
+
       {children}
     </>
   );
