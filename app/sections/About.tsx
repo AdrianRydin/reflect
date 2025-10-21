@@ -40,13 +40,13 @@ export function About() {
 
         <aside className="grid md:grid-cols-2 gap-12 mb-16">
           <aside>
-            <p className="text-white mb-4">
+            <p className="text-white mb-4 text-center sm:text-left">
               I&apos;m a passionate frontend developer with a keen eye for
               design and a love for creating seamless web experiences. With
               expertise in modern JavaScript frameworks and a deep understanding
               of web standards, I bring ideas to life through code.
             </p>
-            <p className="text-white">
+            <p className="text-white text-center sm:text-left">
               When I&apos;m not coding, you can find me exploring new
               technologies, contributing to open-source projects, or sharing
               knowledge with the developer community.
@@ -54,7 +54,9 @@ export function About() {
           </aside>
 
           <aside>
-            <h3 className="mb-6 text-white">Technologies I Work With</h3>
+            <h3 className="mb-6 text-white text-center sm:text-left">
+              Technologies I Work With
+            </h3>
             <aside className="flex flex-wrap gap-2">
               {[
                 "React",
