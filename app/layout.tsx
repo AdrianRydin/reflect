@@ -1,4 +1,3 @@
-// app/layout.tsx (server)
 import "./globals.css";
 import { Inter } from "next/font/google";
 import ClientShell from "./ClientShell";

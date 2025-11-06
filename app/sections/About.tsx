@@ -84,7 +84,7 @@ export function About() {
         <aside className="grid md:grid-cols-3 gap-8">
           {skills.map(({ icon: Icon, title, description }) => (
             <div
-              key={title} // ✅ stabil string
+              key={title}
               className="bg-neutral-800 p-6 rounded-lg border border-neutral-700"
             >
               <Icon className="w-10 h-10 text-white mb-4" />
