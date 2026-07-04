@@ -1,19 +1,23 @@
-// app/page.tsx (server)
+import { Metadata } from "next";
+import { Hero } from "./components/pages/Hero";
+import { Skills } from "./components/pages/Skills";
+import { Projects } from "./components/pages/Projects";
+import { BlogSection } from "./components/pages/BlogSection";
 
-import Hero from "@/app/sections/Hero";
-import { About } from "@/app/sections/About";
-import { Projects } from "./sections/Projects";
-import { Contact } from "./sections/Contact";
-import { Footer } from "./sections/Footer";
-
-export default async function Home() {
+export const metadata: Metadata = {
+  title: "Reflect",
+  description: "Adrian's Portfolio Website",
+};
+export default function Home() {
   return (
-    <main className="min-h-screen bg-neutral-950 ">
+    <div>
       <Hero />
-      <About />
+
+      <Skills />
+
       <Projects />
-      <Contact />
-      <Footer />
-    </main>
+
+      <BlogSection />
+    </div>
   );
 }
