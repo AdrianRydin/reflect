@@ -1,6 +1,6 @@
-import project1 from "../assets/project-1.jpg";
-import project2 from "../assets/project-2.jpg";
-import project3 from "../assets/project-3.jpg";
+import flottsunds from "../assets/flottsunds-har.png";
+import rentium from "../assets/Rentium.png";
+import portfolio from "../assets/PracticePortfolio.png";
 import type { StaticImageData } from "next/image";
 
 export interface Project {
@@ -18,45 +18,44 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "nebula-analytics",
-    title: "Nebula Analytics",
-    tagline: "Realtime dashboard for product teams",
-    description:
-      "A dark-mode analytics platform with live metrics, drill-down charts, and shareable reports.",
+    slug: "flottsunds-har",
+    title: "Flottsunds hår",
+    tagline: "Custom website for a hair salon",
+    description: "A static website delivering everything the salon needs",
     longDescription:
       "Nebula is a realtime analytics tool built for product teams who care about speed and clarity. It streams events over WebSockets, renders 60fps charts, and lets teams collaborate on annotated dashboards. I led the frontend architecture, design system, and animation layer.",
-    tech: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion", "tRPC"],
-    image: project2,
-    liveUrl: "#",
+    tech: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion"],
+    image: flottsunds,
+    liveUrl: "https://www.flottsundshar.se/",
     repoUrl: "#",
     year: "2025",
   },
   {
-    slug: "aether-ui",
-    title: "Aether UI Kit",
-    tagline: "Open-source component library",
+    slug: "e-commerce-project",
+    title: "E-Commerce Student Project",
+    tagline: "An e-commerce website with multiple items",
     description:
-      "A themeable component library for Vue and React, focused on motion and accessibility.",
+      "A small student project made to get experience in building e-commerce website",
     longDescription:
-      "Aether is a design system I built to explore shared primitives between Vue and React. It ships accessible components, a token-driven theming system, and a Figma library that stays in sync with code.",
-    tech: ["Vue", "React", "TypeScript", "Figma", "Storybook"],
-    image: project1,
-    liveUrl: "#",
-    repoUrl: "#",
+      "A small student project made to get experience in building e-commerce website",
+    tech: ["React", "TypeScript", "MUI"],
+    image: rentium,
+    liveUrl: "https://rentium.vercel.app/",
+    repoUrl: "https://github.com/empafrontend/Rentium",
     year: "2024",
   },
   {
-    slug: "lumen-editor",
-    title: "Lumen Editor",
-    tagline: "Distraction-free writing app",
+    slug: "group-portfolio",
+    title: "Group Portfolio",
+    tagline: "Practice portfolio with animations and modern styling",
     description:
-      "A minimalist markdown editor with fluid typography, focus mode, and local-first sync.",
+      "Modern portfolio website for a creative agency for a school project and responsive design.",
     longDescription:
-      "Lumen is a personal project born from my writing habit. It's a markdown editor that gets out of your way — buttery-smooth typing, offline-first, and a soft ambient theme that changes with the time of day.",
-    tech: ["React", "TypeScript", "TailwindCSS", "IndexedDB"],
-    image: project3,
-    liveUrl: "#",
-    repoUrl: "#",
+      "Modern portfolio website for a creative agency for a school project and responsive design.",
+    tech: ["TypeScript", "React", "Framer Motion"],
+    image: portfolio,
+    liveUrl: "https://agile-portfolio.netlify.app/",
+    repoUrl: "https://github.com/AdrianRydin/agile-portfolio",
     year: "2024",
   },
 ];

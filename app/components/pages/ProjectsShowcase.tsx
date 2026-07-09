@@ -18,13 +18,13 @@ function ProjectsShowcase() {
           transition={{ duration: 0.6, delay: i * 0.08 }}
         >
           <Link
-            href={"/projects/$slug"}
+            href={`/projects/${p.slug}`}
             className="group block h-full overflow-hidden rounded-2xl border border-border/60 bg-card transition-all hover:border-primary/60 hover:shadow-[0_0_40px_-10px_var(--primary)]"
           >
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
                 src={p.image}
-                alt="p.title"
+                alt={p.title}
                 width={1024}
                 height={640}
                 loading="lazy"
