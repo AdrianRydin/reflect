@@ -1,4 +1,10 @@
 import ProjectsShowcase from "../components/pages/ProjectsShowcase";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Reflect | Projects",
+  description: "Projects subpage on Reflect",
+};
 
 function page() {
   return (
