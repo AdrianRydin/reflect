@@ -1,156 +1,96 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-@import "@fontsource/space-grotesk/400.css";
-@import "@fontsource/space-grotesk/600.css";
-@import "@fontsource/space-grotesk/700.css";
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
-@import "@fontsource/inter/600.css";
 
-@custom-variant dark (&:is(.dark *));
-
-/*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
- */
-
-@theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://static.figma.com/font/Fraunces_SOFT_WONK_opsz_wght__1")
+    format("woff2");
 }
 
-:root {
-  --radius: 0.875rem;
-  color-scheme: dark;
-  /* Deep near-black background */
-  --background: oklch(0.14 0.02 285);
-  --foreground: oklch(0.98 0.005 285);
-  --card: oklch(0.18 0.025 285);
-  --card-foreground: oklch(0.98 0.005 285);
-  --popover: oklch(0.18 0.025 285);
-  --popover-foreground: oklch(0.98 0.005 285);
-  /* Vibrant purple */
-  --primary: oklch(0.65 0.24 300);
-  --primary-foreground: oklch(0.14 0.02 285);
-  --primary-glow: oklch(0.78 0.19 305);
-  --secondary: oklch(0.24 0.04 290);
-  --secondary-foreground: oklch(0.98 0.005 285);
-  --muted: oklch(0.22 0.03 285);
-  --muted-foreground: oklch(0.68 0.03 285);
-  --accent: oklch(0.35 0.15 300);
-  --accent-foreground: oklch(0.98 0.005 285);
-  --destructive: oklch(0.62 0.24 25);
-  --destructive-foreground: oklch(0.98 0.005 285);
-  --border: oklch(0.28 0.04 290 / 60%);
-  --input: oklch(0.24 0.04 290);
-  --ring: oklch(0.65 0.24 300);
-  --chart-1: oklch(0.65 0.24 300);
-  --chart-2: oklch(0.78 0.19 305);
-  --chart-3: oklch(0.55 0.22 290);
-  --chart-4: oklch(0.45 0.18 285);
-  --chart-5: oklch(0.35 0.15 300);
-  --sidebar: oklch(0.16 0.025 285);
-  --sidebar-foreground: oklch(0.98 0.005 285);
-  --sidebar-primary: oklch(0.65 0.24 300);
-  --sidebar-primary-foreground: oklch(0.14 0.02 285);
-  --sidebar-accent: oklch(0.24 0.04 290);
-  --sidebar-accent-foreground: oklch(0.98 0.005 285);
-  --sidebar-border: oklch(0.28 0.04 290 / 60%);
-  --sidebar-ring: oklch(0.65 0.24 300);
-  --color-primary-glow: var(--primary-glow);
-  --gradient-purple: linear-gradient(
-    135deg,
-    oklch(0.65 0.24 300),
-    oklch(0.78 0.19 305)
-  );
-  --gradient-radial: radial-gradient(
-    circle at 50% 0%,
-    oklch(0.65 0.24 300 / 40%),
-    transparent 60%
-  );
-  --shadow-glow: 0 0 60px -10px oklch(0.65 0.24 300 / 55%);
-  --shadow-elegant: 0 10px 40px -10px oklch(0 0 0 / 60%);
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://static.figma.com/font/Fraunces-Italic_SOFT_WONK_opsz_wght__1")
+    format("woff2");
 }
 
-@layer base {
-  * {
-    border-color: var(--color-border);
-  }
-
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    font-family: var(--font-sans);
-    -webkit-font-smoothing: antialiased;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-display);
-    letter-spacing: -0.02em;
-  }
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://static.figma.com/font/DMSans_opsz_wght__1") format("woff2");
 }
 
-@utility text-gradient {
-  background: var(--gradient-purple);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+@theme {
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+
+  --color-snow-50: #f2f0f4;
+  --color-snow-100: #e6e2e9;
+  --color-snow-200: #ccc5d3;
+  --color-snow-300: #b3a8bd;
+  --color-snow-400: #998ba7;
+  --color-snow-500: #7f6e91;
+  --color-snow-600: #665874;
+  --color-snow-700: #4c4257;
+  --color-snow-800: #332c3a;
+  --color-snow-900: #19161d;
+  --color-snow-950: #120f14;
+
+  --color-magenta-50: #fbeaee;
+  --color-magenta-100: #f7d4dd;
+  --color-magenta-200: #eeaabb;
+  --color-magenta-300: #e67f99;
+  --color-magenta-400: #dd5577;
+  --color-magenta-500: #d52a55;
+  --color-magenta-600: #aa2244;
+  --color-magenta-700: #801933;
+  --color-magenta-800: #551122;
+  --color-magenta-900: #2b0811;
+  --color-magenta-950: #1e060c;
+
+  --color-teal-50: #f1f3f3;
+  --color-teal-200: #c7d1cd;
+  --color-teal-400: #90a29c;
+  --color-teal-600: #5d6f69;
+  --color-teal-800: #2e3834;
+
+  --color-indigo-50: #eeedf7;
+  --color-indigo-400: #786fc3;
+  --color-indigo-500: #564bb4;
+  --color-indigo-700: #332d6c;
+  --color-indigo-900: #110f24;
 }
 
-@utility glow {
-  box-shadow: var(--shadow-glow);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #120f14;
+  color: #f2f0f4;
+  font-family: "DM Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+::selection {
+  background-color: #d52a55;
+  color: #f2f0f4;
 }
