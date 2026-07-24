@@ -1,23 +1,25 @@
-import { Metadata } from "next";
-import { Hero } from "./components/pages/Hero";
-import { Skills } from "./components/pages/Skills";
-import { Projects } from "./components/pages/Projects";
-import { BlogSection } from "./components/pages/BlogSection";
+import Nav from "./components/Nav";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
-export const metadata: Metadata = {
-  title: "Reflect",
-  description: "Adrian's Portfolio Website",
-};
-export default function Home() {
+function page() {
   return (
-    <div>
-      <Hero />
-
-      <Skills />
-
-      <Projects />
-
-      <BlogSection />
+    <div className="bg-[#120f14] min-h-screen font-sans">
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
+
+export default page;
